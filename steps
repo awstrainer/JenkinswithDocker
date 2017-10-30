@@ -27,6 +27,7 @@ http://192.168.13.252:8080
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 Configure jenkins
+Install Delivery Pipeline View
 
 sudo apt-get install docker.io
 
