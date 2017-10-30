@@ -1,0 +1,46 @@
+# JenkinswithDocker
+Vagrant.configure(2) do |config|
+config.vm.define "jenkins" do |jenkins|
+jenkins.vm.box = "ubuntu/trusty64"
+jenkins.vm.network "private_network", ip: "192.168.13.252"
+jenkins.vm.hostname = "jenkins"
+jenkins.vm.provider "virtualbox" do |v|
+v.memory = 4096
+v.cpus = 2
+end
+end
+end
+
+
+
+
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install -y oracle-java8-installer
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install jenkins -y
+sudo service jenkins restart
+
+Configure jenkins
+
+sudo apt-get install docker.io
+
+sudo usermod -aG docker $USER
+
+sudo usermod -a -G docker jenkins
+sudo apt-get install apparmor lxc cgroup-lite
+
+logout and login
+
+sudo su - 
+sudo service docker restart
+
+
+
+logout and login
+sudo docker run --name=Naresh -d -p 80:80 tutum/hello-world 
+sudo docker stop Naresh13
+sudo docker start Naresh13
