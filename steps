@@ -60,3 +60,5 @@ Stop Docker
 -----------------
 docker stop Hello-world-docker
 docker ps
+
+Then in post build action of start Docker, Build-other-projects -> Stop Docker
