@@ -39,6 +39,7 @@ logout and login
 
 sudo su - 
 sudo service docker restart
+sudo service jenkins restart
 
 
 
