@@ -47,5 +47,16 @@ sudo service jenkins restart
 logout and login
 sudo docker run --name=Hello-world-docker -d -p 80:80 tutum/hello-world 
 curl http://localhost:80
-sudo docker start Hello-world-docker
-sudo docker stop Hello-world-docker
+docker start Hello-world-docker
+docker stop Hello-world-docker
+
+Start Docker
+-----------------
+docker start Hello-world-docker
+docker ps
+curl http://localhost:80
+
+Stop Docker
+-----------------
+docker stop Hello-world-docker
+docker ps
